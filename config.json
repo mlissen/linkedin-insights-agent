@@ -1,0 +1,45 @@
+{
+  "profiles": [
+    {
+      "name": "Sam McKenna",
+      "linkedinUsername": "sammckenna1",
+      "focusTopics": ["sales", "prospecting", "outreach", "cold email", "closing", "discovery", "objection handling"],
+      "description": "Sales expert and founder, focus on outbound sales strategies"
+    },
+    {
+      "name": "Jeb Blount",
+      "linkedinUsername": "jebblount",
+      "focusTopics": ["sales", "prospecting", "fanatical prospecting", "sales methodology"],
+      "description": "Author of Fanatical Prospecting, sales training expert"
+    },
+    {
+      "name": "Morgan J Ingram",
+      "linkedinUsername": "morganjingram",
+      "focusTopics": ["sales", "social selling", "video prospecting", "linkedin outreach"],
+      "description": "Director of Sales Execution, social selling expert"
+    }
+  ],
+  "defaultSettings": {
+    "postLimit": 200,
+    "outputFormat": "instructions",
+    "dataDirectory": "./data"
+  },
+  "analysisCategories": {
+    "prospecting": {
+      "keywords": ["prospecting", "cold outreach", "lead generation", "finding prospects", "qualifying leads"],
+      "weight": 1.0
+    },
+    "discovery": {
+      "keywords": ["discovery call", "qualifying questions", "pain points", "needs assessment"],
+      "weight": 1.0
+    },
+    "closing": {
+      "keywords": ["closing deals", "overcoming objections", "negotiation", "asking for the sale"],
+      "weight": 1.0
+    },
+    "templates": {
+      "keywords": ["template", "script", "copy this", "email template", "subject line"],
+      "weight": 1.2
+    }
+  }
+}

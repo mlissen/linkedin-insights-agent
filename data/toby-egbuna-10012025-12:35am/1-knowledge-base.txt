@@ -1,0 +1,260 @@
+# KNOWLEDGE BASE: toby-egbuna Expert Insights
+Generated: 10/1/2025
+Source: 200 LinkedIn posts, 26 insights extracted
+
+---
+
+## METHODOLOGIES & FRAMEWORKS
+
+### VC Fundraising Roadmap
+
+A systematic approach to preparing for and executing a successful venture capital fundraising process, including early-stage relationship building with investors.
+
+**Application:** Can be used by founders looking to raise venture capital funding for their startup
+
+### Startup Funding Roadmap
+
+A comprehensive guide to accessing and securing loans for startups, covering key requirements, loan types, application materials, and strategies to make the startup attractive to lenders.
+
+**Application:** This methodology can be used by any startup founder looking to extend their runway and grow their business while maintaining equity ownership, by leveraging loans as an alternative to venture capital.
+
+### VC Fundraising as a Sales Process
+
+Treating VC fundraising like a sales process, where founders can optimize their approach by recording and analyzing their calls to identify strengths, weaknesses, and opportunities for improvement, just like top sales teams do.
+
+**Application:** This methodology can be applied by any founder raising venture capital funding, as a way to systematically refine their pitch and increase their odds of closing deals.
+
+---
+
+## COMPLETE TEMPLATE LIBRARY
+
+### Initial Outreach
+
+**Template 1:**
+```
+Hi [connection], I hope all is well. I saw on LinkedIn that you're connected to [investor name]. Would you be able to introduce us? For context, we aren't actively raising, but looking to do so in the next 6-9 months. I really like the work this fund has done in [space], and I'd love to connect with them ahead of our raise.
+```
+
+### Other
+
+**Template 1:**
+```
+When investors ask about valuation early, give a range ($5-7M) instead of a specific number ($6M).
+```
+
+**Template 2:**
+```
+1. Know what you need- Revenue ideally over $250K- Funding needs between $200K-$1M- 2+ years in business
+2. Pick the right type of loan
+→ Term loans: Traditional bank loans, predictable payments
+→ SBA loans: Government-backed, better rates
+→ Revenue-based financing: Flexible payments based on revenue
+→ Invoice factoring: Quick cash from unpaid invoices
+3. Prepare your materials
+- Business plan
+- Financial statements
+- Bank statements
+- Use of funds statement
+- Credit report
+- Business debt schedule
+4. Make your company attractive
+- Showing real traction (ideally with users AND revenue)
+- Being specific about fund usage - be able to articulate where the money is going and the milestones you'll reach
+- Highlighting community impact - especially for local loans; talk about how you'll support the surrounding community for your company
+```
+
+**Template 3:**
+```
+Using Fathom Video or a similar tool to record your fundraising calls
+```
+
+---
+
+## ALL EXTRACTED INSIGHTS
+
+### Strategy
+
+- Start networking with investors 6-9 months before you need to raise capital, as it makes it 10x easier to close your funding round. (Confidence: 100%)
+- When investors ask about valuation early, give a range ($5-7M) instead of a specific number ($6M) to show you've considered it while leaving room for negotiation. (Confidence: 90%)
+- When fundraising, your story needs three key elements: personal connection to the problem, clear market opportunity, and why you're the right person to solve it. (Confidence: 90%)
+- Leverage loans to extend runway and grow the startup while maintaining equity ownership. (Confidence: 90%)
+- Highlight the startup's real traction, specific fund usage plans, and community impact to demonstrate the potential for success and secure the loan. (Confidence: 80%)
+- Treat fundraising like sales - just like sales teams optimize their processes, founders can treat VC calls as a numbers game to hit their goals. (Confidence: 100%)
+- VC-backed startups often charge significantly more than the competitive value of their products in order to grow into their high valuations, rather than focusing on sustainable growth and offering real value to customers. (Confidence: 90%)
+- Companies that raise little-to-no VC funding and charge dramatically less for similar products are likely to gain market share from VC-backed companies that have priced above their competitive value. (Confidence: 80%)
+- Startups should prioritize sustainable growth over inflated valuations, so they can offer real value to customers instead of just hiking prices to match their VC-driven growth targets. (Confidence: 90%)
+- Besides focusing only on the valuation, founders should also consider the board composition and control, liquidation preferences, and anti-dilution provisions when evaluating a term sheet. (Confidence: 100%)
+- Harlem Capital Partners (HCP) provided detailed feedback, transparency, and introductions to other investors, which exemplifies genuine support for Black founders beyond just funding. (Confidence: 90%)
+
+### Prospecting
+
+- Reach out to your connections on LinkedIn to get warm introductions to investors, even if you aren't actively raising yet. (Confidence: 90%)
+- Know the key requirements for securing loans, such as revenue over $250K, funding needs between $200K-$1M, and at least 2 years in business with a solid customer base. (Confidence: 90%)
+
+### Closing
+
+- Investors are more likely to take meetings and write checks for founders they've been following for months versus someone they just met. (Confidence: 90%)
+- Prepare key materials like a business plan, financial statements, bank statements, use of funds statement, credit report, and business debt schedule to make the startup more attractive to loan officers. (Confidence: 80%)
+- Even though HCP ultimately declined to invest, they introduced the founder to other potential investors, showing their commitment to supporting Black founders beyond just funding. (Confidence: 80%)
+
+### Nurture
+
+- Building relationships with investors 6-9 months before you need capital makes the fundraising process 10x easier, as it allows for more authentic conversations focused on relationship building rather than just closing a deal. (Confidence: 90%)
+- HCP maintained an open line of communication with the founder throughout the diligence process, relieving the founder's anxiety and stress during that time. (Confidence: 80%)
+
+### Tactics
+
+- Validate your idea with service businesses first, then add tech later, instead of waiting until your tech is perfect. (Confidence: 90%)
+- Use project-based billing instead of hourly rates when working with contractors to incentivize them to work efficiently. (Confidence: 90%)
+- Record and analyze your VC calls to pinpoint which parts of your pitch excite investors, identify where you lose their attention, and find opportunities to improve your delivery and deck. (Confidence: 90%)
+- Look for positive cues like leaning forward, follow-up questions, and genuine curiosity, as well as negative cues like disengagement, phone checking, and polite but vague responses, to spot patterns and adjust your approach. (Confidence: 90%)
+- Based on the insights from call analysis, add more compelling storytelling, sharpen your delivery and focus, and double down on what works. (Confidence: 80%)
+
+### Discovery
+
+- Consider different types of loans, including term loans, SBA loans, revenue-based financing, and invoice factoring, and choose the right one based on the startup's needs. (Confidence: 80%)
+- HCP gave the founder a 52-page PDF detailing their due diligence process, feedback, and reasoning behind their investment decision, which helped the founder refine their pitch for future investors. (Confidence: 80%)
+
+### Cadences
+
+- Create a feedback loop by reviewing your calls regularly, whether it's a Friday wrap-up or a midweek ritual, to maintain consistency. (Confidence: 80%)
+
+---
+
+## ACTIONABLE ITEMS
+
+- Start networking with investors 6-9 months before you plan to raise capital
+- Reach out to your connections on LinkedIn to get warm introductions to investors you want to connect with
+- Focus on building authentic relationships with investors rather than just trying to close a deal
+- Validate your idea with a service business before fully developing the technology
+- Use project-based billing instead of hourly rates when working with contractors
+- Ensure your fundraising story includes a personal connection, market opportunity, and why you're the right person to solve the problem
+- Determine if the startup meets the key requirements for securing loans, including revenue over $250K, funding needs between $200K-$1M, and at least 2 years in business with a solid customer base.
+- Evaluate different loan types (term loans, SBA loans, revenue-based financing, invoice factoring) and choose the best fit for the startup's needs.
+- Prepare the necessary materials, including a business plan, financial statements, bank statements, use of funds statement, credit report, and business debt schedule.
+- Emphasize the startup's real traction, specific fund usage plans, and community impact to make the company more attractive to loan officers.
+- Download the full guide mentioned in the post for more detailed information and strategies.
+- Start recording your VC calls today to apply the same process optimization approach that sales teams use
+- Review your calls regularly, whether weekly or bi-weekly, to identify patterns and opportunities for improvement in your pitch
+- Adjust your pitch deck, delivery, and focus based on the insights gathered from analyzing your recorded calls
+- Think carefully about the implications of taking VC funding and what it means for your pricing and growth strategy.
+- Consider alternative funding approaches, such as bootstrapping or raising at a more realistic valuation, in order to maintain control over your pricing and offer genuine value to customers.
+- Benchmark your pricing against competitors, especially those who have not taken VC funding, to ensure you are offering a competitively-priced product.
+- When evaluating a term sheet, do not solely focus on the valuation. Also carefully consider the board composition and control, liquidation preferences, and anti-dilution provisions to ensure you are protecting yourself and your business.
+- Try not to give up a board seat before your Seed round, and ideally before your Series A, to maintain more control over the company in the early stages.
+- Aim for a 1x liquidation preference, as this ensures a fair distribution of proceeds in the event of an acquisition or IPO.
+- Reach out to venture capital funds and request detailed feedback on your pitch, even if they decline to invest.
+- Maintain open communication with investors throughout the fundraising process to reduce founder anxiety.
+- Ask investors to introduce you to other potential investors, even if they decide not to fund your startup.
+
+---
+
+## EXTERNAL REFERENCE MATERIALS
+
+Long-form articles and resources for deeper context:
+
+### LinkedIn
+**Source:** lnkd.in (external)
+**URL:** https://lnkd.in/dZpuXrN6
+**Summary:** This link will take you to a page that’s not on LinkedIn
+
+**Full Content:**
+```
+This experience is optimized for Chrome, Edge, and Safari
+```
+
+### LinkedIn
+**Source:** lnkd.in (external)
+**URL:** https://lnkd.in/dYUjCbzy
+**Summary:** This link will take you to a page that’s not on LinkedIn
+
+**Full Content:**
+```
+This experience is optimized for Chrome, Edge, and Safari
+```
+
+### LinkedIn
+**Source:** lnkd.in (external)
+**URL:** https://lnkd.in/dHBxpV9E
+**Summary:** This link will take you to a page that’s not on LinkedIn
+
+**Full Content:**
+```
+This experience is optimized for Chrome, Edge, and Safari
+```
+
+### LinkedIn
+**Source:** lnkd.in (external)
+**URL:** https://lnkd.in/d-xQQRAD
+**Summary:** This link will take you to a page that’s not on LinkedIn
+
+**Full Content:**
+```
+This experience is optimized for Chrome, Edge, and Safari
+```
+
+### LinkedIn
+**Source:** lnkd.in (external)
+**URL:** https://lnkd.in/dbS3CM5J
+**Summary:** This link will take you to a page that’s not on LinkedIn
+
+**Full Content:**
+```
+This experience is optimized for Chrome, Edge, and Safari
+```
+
+---
+
+## SAMPLE LINKEDIN POSTS
+
+High-engagement posts from the source:
+
+### Post 1 (841 likes, 93 comments)
+```
+Founders: there’s still free money up for grabs before the end of the year.Here’s a list of 9 equity-free funding opportunities to apply for before the end of the year 👇🏾1. Richard King Mellon Foundation Social-Impact Pitch Competition- Amount: $1.5M prize pool- Qualifications: Pre-seed, Seed | Any US location | Social Enterprise, Social Equity, Social Impact, Social Innovation- Apply here: https://lnkd.in/eAg378362. EmpowHer Grant- Amount: varies- Qualifications: Pre-Seed (I have some revenue...
+```
+
+### Post 2 (765 likes, 139 comments)
+```
+I needed to pitch 300 investors to close our $780k pre-seed round. Most founders quit after 30.Here is how to calculate the number of funds you need to identify before you raise VC. ⬇️Your investor pipeline is a list of funds and angel investors you want to invest in your round. Think of it as a funnel (with some rough conversion rates).For every 10 investors on our target list, I got a meeting with only 3 of them - a 30% target-to-meeting conversion rate.For every 30 meetings, I got just 1 chec...
+```
+
+### Post 3 (586 likes, 126 comments)
+```
+I wasted $250k because I assumed I'd raise VC to save me.That lost money has led me to one crucial understanding:The best thing early-stage founders can do is build as if VC doesn't exist.The VC-backed startup model follows a predictable pattern:1. Founders build massive teams before they're needed2. Companies raise more money than necessary3. Products are priced beyond their actual value4. Large amounts are wasted on paid ads and PR campaignsAs I built Chezie the assumption that I would need to...
+```
+
+### Post 4 (618 likes, 56 comments)
+```
+The founder of Snapchat just dropped the most powerful fundraising advice I've heard in a long time.In a recent episode of How I Built This with Guy Raz, Evan Spiegel mentioned that in his early days raising VC, he realized very early on that there are 3 things you can optimize for when raising money:1. The investors themselves2. The terms you get3. The valuationFirst-time founders only get to pick 2.Pick valuation + terms?- Pros: you get to say your startup is worth whatever you want, and you p...
+```
+
+### Post 5 (596 likes, 50 comments)
+```
+After months of rejections from potential investors, a founder jumped off the VC flywheel and scaled a $60 million ARR business. Then he raised $350 million.Here's a story you might not know: The founder of Calendly, Tope Awotona, faced repeated rejections while trying to raise money from VCs. Like all great founders do, Tope pressed on in spite of these setbacks. He was eventually able to raise $550k — then, instead of continuing down the fundraising rabbit hole, he focused on building a great ...
+```
+
+### Post 6 (590 likes, 40 comments)
+```
+After 100+ pitches to VCs, I can confidently say that Harlem Capital was the most equity-focused in its diligence process. Here are three things Harlem Capital Partners (HCP) did that I think all VC funds should work into their processes 👇In 2022, I pitched Chezie to HCP. While they ultimately declined to invest, their approach left a lasting impression on me.1. They gave detailed feedback.I’d gotten used to single-line emails saying we weren’t chosen to receive funding without any reasoning as...
+```
+
+### Post 7 (551 likes, 76 comments)
+```
+I just finished interviewing 4 angel investors who’ve invested in 90+ startups.If I was a founder looking to raise a $250-500k angel round, here’s how I would land my first 30 angel investor meetings in 3 weeks 👇🏾WEEK 1: RESEARCHDays 1-3 - Build your list1. Open LinkedIn and go to your Connections.2. Click Filter. Scroll to the Title field and filter for “angel”3. Identify any angels that live in your geography4. Add the results to a spreadsheet with these columns: Name, LinkedIn URL5. Repeat ...
+```
+
+### Post 8 (516 likes, 76 comments)
+```
+Founders are often advised to “hire the best people,” which sounds good in theory but isn’t realistic for most. Here’s why this advice misses the mark:Early on with Chezie, I posted an engineering role with a $120K salary. A Silicon Valley leader straight-up told me, “That’s pretty low; you’ll have trouble recruiting.” And she was right. Most applicants were junior devs, not the “rockstar” hires investors envision. And as I saw other founders making high-profile hires, I noticed a pattern: nearl...
+```
+
+### Post 9 (396 likes, 72 comments)
+```
+For my pre-seed, I created a list of 30 target VCs. I quickly learned I needed to 10x that. Here's why first-time founders should identify 300+ funds to raise their first $1M ⬇️Building your investor pipeline isn't about finding a handful of "perfect fit" funds.It's about understanding the (pretty low) conversion rates at each stage of the funnel.When I raised our pre-seed for Chezie, for every 10 investors on our target list, I got a meeting with only 3 of them - a 30% target-to-meeting convers...
+```
+
+### Post 10 (364 likes, 53 comments)
+```
+I set aside $25k of our pre-seed round for friends and family.To my surprise, they invested over $160k. Here’s the process we followed 👇🏾I’m a firm believer that every founder should launch a friends and family round, even if traditional VC or external funding isn't in your plans.This is your chance to share wealth creation with the people who’ve always supported you.Our approach was methodical – here's the step-by-step:1. Contacted our networkI reached out to everyone in my personal network a...
+```

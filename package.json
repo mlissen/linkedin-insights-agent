@@ -1,0 +1,30 @@
+{
+  "name": "linkedin-insights-agent",
+  "version": "1.0.0",
+  "description": "A powerful tool to scrape LinkedIn posts from sales experts and extract actionable insights, strategies, templates, and tactics for your AI sales and marketing projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "timeout 600 tsx src/main.ts",
+    "start:long": "timeout 1200 tsx src/main.ts",
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start:node": "node --loader ts-node/esm src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.62.0",
+    "@types/node": "^24.5.0",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.2",
+    "jsonrepair": "^3.13.0",
+    "puppeteer": "^24.21.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "type": "module"
+}

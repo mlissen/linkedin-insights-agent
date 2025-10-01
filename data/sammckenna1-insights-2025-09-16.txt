@@ -1,0 +1,23 @@
+# AI Project Instructions: sammckenna1 Sales Insights
+
+## Context
+Based on analysis of 0 LinkedIn posts from @sammckenna1, the following sales insights and strategies have been extracted for implementation in AI sales and marketing projects.
+
+## AI Project Implementation Guidelines
+
+When implementing these insights in your AI projects:
+
+- Prioritize high-confidence insights (>70%) for core features
+- Use extracted templates as starting points for AI-generated content
+- Implement actionable tactics as specific project requirements
+- Test approaches with highest engagement metrics first
+- Maintain the authentic voice and style patterns identified
+
+## Quick Reference
+
+**Total Posts Analyzed:** 0
+**Insights Extracted:** 0
+**Templates Available:** 0
+**Actionable Items:** 0
+
+**Analysis Date:** 2025-09-16T20:20:07.011Z

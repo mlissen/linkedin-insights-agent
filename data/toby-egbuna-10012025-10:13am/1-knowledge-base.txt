@@ -1,0 +1,153 @@
+# KNOWLEDGE BASE: toby-egbuna Expert Insights
+Generated: 10/1/2025
+Source: 84 LinkedIn posts, 13 insights extracted
+
+---
+
+## METHODOLOGIES & FRAMEWORKS
+
+### VC Fundraising Roadmap
+
+A systematic approach to preparing for and executing a successful venture capital fundraise, starting with pre-raise networking and relationship building.
+
+**Application:** When planning a venture capital fundraise, use this methodology to guide your strategy and tactics from the initial stages through closing the round.
+
+---
+
+## COMPLETE TEMPLATE LIBRARY
+
+### Initial Outreach
+
+**Template 1:**
+```
+Hi [connection], I hope all is well. I saw on LinkedIn that you're connected to [investor name]. Would you be able to introduce us? For context, we aren't actively raising, but looking to do so in the next 6-9 months. I really like the work this fund has done in [space], and I'd love to connect with them ahead of our raise.
+```
+
+### Other
+
+**Template 1:**
+```
+Quality monthly updates to keep investors informed
+```
+
+**Template 2:**
+```
+Quarterly check-ins with high-priority investors
+```
+
+**Template 3:**
+```
+When investors ask about valuation early, give a range ($5-7M) instead of a specific number ($6M).
+```
+
+---
+
+## ALL EXTRACTED INSIGHTS
+
+### Strategy
+
+- For first-time founders who are often underfunded, focus on hiring the best talent you can afford, such as contract UI/UX designers and developers in lower-cost locations. (Confidence: 90%)
+- First-time founders should move deliberately, stay lean, and push the limits without crossing the line, unlike the example of Uber throwing a $10M+ damaging Vegas party. (Confidence: 80%)
+- Instead of constantly fundraising, first-time founders should send quality monthly updates to keep investors informed and schedule quarterly check-ins with high-priority investors they're targeting for a future round. (Confidence: 80%)
+- Treating investors like ATMs (only contacting them when you need money) can significantly slow down your fundraising process. (Confidence: 80%)
+- When investors ask about valuation early, give a range ($5-7M) instead of a specific number ($6M) to leave room for negotiation. (Confidence: 90%)
+
+### Prospecting
+
+- Start networking with VCs months before you need to raise capital, rather than only reaching out when you need money. (Confidence: 90%)
+
+### Nurture
+
+- Building relationships with investors 6-9 months before you need capital makes it 10x easier to close your funding round. (Confidence: 90%)
+
+### Tactics
+
+- Use a template to get warm introductions from your network to investors you want to connect with ahead of your fundraise. (Confidence: 80%)
+- Validate your business idea with service businesses first, then add technology later, rather than waiting until the tech is perfect. (Confidence: 90%)
+- Use project-based billing instead of hourly rates when working with contractors to incentivize efficiency. (Confidence: 90%)
+
+### Closing
+
+- Investors are more likely to invest in founders they have been following for months versus someone they just met. (Confidence: 90%)
+
+### Sales Comms
+
+- Without the immediate pressure of raising, conversations can focus on relationship building rather than closing a deal. (Confidence: 80%)
+- When fundraising, your story needs three key elements: personal connection to the problem, clear market opportunity, and why you're the right person to solve it. (Confidence: 90%)
+
+---
+
+## ACTIONABLE ITEMS
+
+- Hire contract UI/UX designers and developers in lower-cost locations
+- Move deliberately, stay lean, and push the limits without crossing the line
+- Send quality monthly updates to investors and schedule quarterly check-ins with high-priority targets
+- Start building relationships with investors 6-9 months before you plan to raise capital, rather than waiting until you need the money.
+- Use a template to get warm introductions from your network to investors you want to connect with ahead of your fundraise.
+- Focus on relationship building with investors rather than just trying to close a deal when you're ready to raise.
+- Validate your business idea with service businesses first, then add technology later
+- Use project-based billing instead of hourly rates when working with contractors
+- Ensure your fundraising story has the three key elements: personal connection, market opportunity, and why you're the right person
+
+---
+
+## EXTERNAL REFERENCE MATERIALS
+
+
+**Full Content:**
+
+---
+
+## LINKEDIN POSTS
+
+High-engagement posts from the source:
+
+### Post 1 (765 likes, 139 comments)
+```
+I needed to pitch 300 investors to close our $780k pre-seed round. Most founders quit after 30.Here is how to calculate the number of funds you need to identify before you raise VC. ⬇️Your investor pipeline is a list of funds and angel investors you want to invest in your round. Think of it as a funnel (with some rough conversion rates).For every 10 investors on our target list, I got a meeting with only 3 of them - a 30% target-to-meeting conversion rate.For every 30 meetings, I got just 1 chec...
+```
+
+### Post 2 (668 likes, 51 comments)
+```
+Founders: there’s free money up for grabs!Here’s a list of 8 equity-free grants with deadlines approaching soon 👇🏾1. Pitch Black- Amount: up to $15K- Deadline: 2/7/2025- Apply here: https://lnkd.in/eHJDqHHp2. Google.org Accelerator: Generative AI- Amount: $500K-$2M- Deadline: 2/10/2025- Apply here: https://lnkd.in/e-4HYfNR3. Neighborhood Opportunity Fund- Amount: up to $250K- Deadline: 2/14/2025- Apply here: https://lnkd.in/eNEdH--B4. EmpowHer grant- Amount: Varies- Deadline: 2/15/2025- Apply ...
+```
+
+### Post 3 (586 likes, 126 comments)
+```
+I wasted $250k because I assumed I'd raise VC to save me.That lost money has led me to one crucial understanding:The best thing early-stage founders can do is build as if VC doesn't exist.The VC-backed startup model follows a predictable pattern:1. Founders build massive teams before they're needed2. Companies raise more money than necessary3. Products are priced beyond their actual value4. Large amounts are wasted on paid ads and PR campaignsAs I built Chezie the assumption that I would need to...
+```
+
+### Post 4 (551 likes, 76 comments)
+```
+I just finished interviewing 4 angel investors who’ve invested in 90+ startups.If I was a founder looking to raise a $250-500k angel round, here’s how I would land my first 30 angel investor meetings in 3 weeks 👇🏾WEEK 1: RESEARCHDays 1-3 - Build your list1. Open LinkedIn and go to your Connections.2. Click Filter. Scroll to the Title field and filter for “angel”3. Identify any angels that live in your geography4. Add the results to a spreadsheet with these columns: Name, LinkedIn URL5. Repeat ...
+```
+
+### Post 5 (396 likes, 72 comments)
+```
+For my pre-seed, I created a list of 30 target VCs. I quickly learned I needed to 10x that. Here's why first-time founders should identify 300+ funds to raise their first $1M ⬇️Building your investor pipeline isn't about finding a handful of "perfect fit" funds.It's about understanding the (pretty low) conversion rates at each stage of the funnel.When I raised our pre-seed for Chezie, for every 10 investors on our target list, I got a meeting with only 3 of them - a 30% target-to-meeting convers...
+```
+
+### Post 6 (366 likes, 53 comments)
+```
+I set aside $25k of our pre-seed round for friends and family.To my surprise, they invested over $160k. Here’s the process we followed 👇🏾I’m a firm believer that every founder should launch a friends and family round, even if traditional VC or external funding isn't in your plans.This is your chance to share wealth creation with the people who’ve always supported you.Our approach was methodical – here's the step-by-step:1. Contacted our networkI reached out to everyone in my personal network a...
+```
+
+### Post 7 (363 likes, 42 comments)
+```
+I've raised $1.2M in total funding, and exactly $0 came from angel investors 😅After talking to 4 angels who've made 90+ combined investments, I realized I was doing outreach all wrong.Here's how I'd craft a winning angel investor DM (not email) today.There were a few problems with my angel outreach for Chezie:- Using only email - Angels who invest in public regularly check their DMs, and their emails aren't always public- Spraying and praying - I created a template and only swapped the [name] f...
+```
+
+### Post 8 (345 likes, 48 comments)
+```
+If I were a first-time founder with no VC connections and wanted to raise a $1M pre-seed, here’s how I would get my first 10 meetings:I raised my $790k pre-seed 2 years ago by tapping into my network.The biggest mistake I see first-time founders make when trying to get meetings is cold emailing.Please stop. It (almost) never works.Instead, focus on getting warm introductions for your first 10 meetings with this process:1. Open a spreadsheet with the following columns: - Person I know - LinkedIn ...
+```
+
+### Post 9 (326 likes, 61 comments)
+```
+I wasted weeks cold emailing VCs for my pre-seed when I should have focused on getting warm intros.If I had no network but still needed to raise, here's exactly how I'd engineer my first 10 warm intros 👇🏾1. Build my target list of 300+ VCs.2. Prioritize the funds in that list to identify the top 10% (30 funds) that I wanted to raise from based on connections, thesis, brand, similar investments, etc.3. Filter by target list for only these 30 funds4. Go to Crunchbase5. Starting with the first of...
+```
+
+### Post 10 (339 likes, 38 comments)
+```
+After 120+ VC meetings, I finally realized:Fundraising is just enterprise sales with a different product (equity).Here's the follow-up system I should have built from day one.When selling our product, I'd never expect to close a $50k deal in one meeting.I'd build a relationship. Send updates. Share wins. Stay top of mind.But when VCs said "not right now," I'd mark them as dead leads.Big mistake."Not right now" sometimes means "Show me more progress"Just like "need to think about it" in sales som...
+```

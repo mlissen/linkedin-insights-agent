@@ -1,0 +1,103 @@
+# AI Project Instructions: samsalesli Sales Insights
+
+## Context
+Based on analysis of 10 LinkedIn posts from @samsalesli, the following sales insights and strategies have been extracted for implementation in AI sales and marketing projects.
+
+## Prospecting Strategy
+
+## Discovery Strategy
+
+## Tactics Strategy
+
+## Templates Strategy
+
+## Nurture Strategy
+
+### Templates to Use:
+```
+But even still, I see companies use this tactic deceitfully.  Take a billing platform we were recently considering.  Just before we visited their site, a "$100 Starbucks card for a demo
+```
+
+```
+Bonus: use this subject line - hashtag#samsales + Their Company: Initial Conversation.  Putting your company name first ensures they see your name frequently when they check their cal and may prompt them to invite others, giving you the easiest multi-thread of your life. hashtag#samsales
+```
+
+## Strategy Strategy
+
+### Templates to Use:
+```
+But even still, I see companies use this tactic deceitfully.  Take a billing platform we were recently considering.  Just before we visited their site, a "$100 Starbucks card for a demo
+```
+
+## Master Template Library
+
+Use these proven templates in your AI sales projects:
+
+### Template 1:
+```
+"ROI = influence that moves people toward the buying decision, over time. Thought leadership warms the room before you enter it."
+```
+
+### Template 2:
+```
+"Thanks for your email, I'm not the right person."
+```
+
+### Template 3:
+```
+"Got it. Could you point me in the right direction of who is?"
+```
+
+### Template 4:
+```
+"$100 Starbucks card for a demo!"
+```
+
+### Template 5:
+```
+"We thought the visual might help you get your budget ducks in a row."
+```
+
+### Template 6:
+```
+"Wait, I have to ask, what are all these toys on shelf behind you?"
+```
+
+### Template 7:
+```
+"Wait, I have to ask, what are the books in your shot here? Are these your favorite?"
+```
+
+### Template 8:
+```
+"wind me up, let me focus on my book, I'll holler when I need you"
+```
+
+### Template 9:
+```
+"How was your weekend?"
+```
+
+### Template 10:
+```
+"So what's up with your deals?"
+```
+
+## AI Project Implementation Guidelines
+
+When implementing these insights in your AI projects:
+
+- Prioritize high-confidence insights (>70%) for core features
+- Use extracted templates as starting points for AI-generated content
+- Implement actionable tactics as specific project requirements
+- Test approaches with highest engagement metrics first
+- Maintain the authentic voice and style patterns identified
+
+## Quick Reference
+
+**Total Posts Analyzed:** 10
+**Insights Extracted:** 7
+**Templates Available:** 11
+**Actionable Items:** 1
+
+**Analysis Date:** 2025-09-16T20:45:10.771Z

@@ -1,0 +1,49 @@
+{
+  "extractedAt": "2025-09-16T19:20:51.264Z",
+  "totalPosts": 2,
+  "totalInsights": 1,
+  "posts": [
+    {
+      "id": "post_0",
+      "content": "What's the ROI of thought leadership and why might our focus on attribution hurt us? One of IBM's CMOs, Cindy Anderson, said it best.\"ROI = influence that moves people toward the buying decision, over time. Thought leadership warms the room before you enter it.\"IBM's research of 4000 C-Suites, avg revenue 29B, found that 87% made a specific purchasing decision within 90 days of consuming thought leadership, part of why we've seen a surge in CXOs joining LinkedIn as their primary delivery vehicle",
+      "publishedAt": "2025-09-16T19:20:51.020Z",
+      "engagement": {
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      "url": "https://www.linkedin.com/in/samsalesli/"
+    },
+    {
+      "id": "post_1",
+      "content": "\"Thanks for your email, I'm not the right person.\"\"Got it. Could you point me in the right direction of who is?\"😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑 Those replies, if we get them at all, are about as standard as they come. Training on how to do this right is in our Referrals deck, as part of our 19-hour Show Me You Know Me masterclass series, and let me tell you, that deck is 🔥🔥🔥🔥🔥. Here's a better reply framework, straight out of our deck:💡 Reply with gratitude💡 Use EQ in your as",
+      "publishedAt": "2025-09-16T19:20:51.020Z",
+      "engagement": {
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      "url": "https://www.linkedin.com/in/samsalesli/"
+    }
+  ],
+  "insights": [
+    {
+      "id": "post_1_insight_4",
+      "category": "sales_comms",
+      "insight": "\"Thanks for your email, I'm not the right person",
+      "sourcePost": {
+        "id": "post_1",
+        "content": "\"Thanks for your email, I'm not the right person.\"\"Got it. Could you point me in the right direction of who is?\"😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑😑 Those replies, if we get them at all, are about as standard as they come. Training on how to do this right is in our Referrals deck, as part of our 19-hour Show Me You Know Me masterclass series, and let me tell you, that deck is 🔥🔥🔥🔥🔥. Here's a better reply framework, straight out of our deck:💡 Reply with gratitude💡 Use EQ in your as",
+        "publishedAt": "2025-09-16T19:20:51.020Z",
+        "engagement": {
+          "likes": 0,
+          "comments": 0,
+          "shares": 0
+        },
+        "url": "https://www.linkedin.com/in/samsalesli/"
+      },
+      "confidence": 0.13999999999999999,
+      "extractedAt": "2025-09-16T19:20:51.255Z"
+    }
+  ]
+}
