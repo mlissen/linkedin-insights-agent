@@ -14,35 +14,63 @@ A powerful tool to scrape LinkedIn posts from sales experts and extract actionab
 
 ## Quick Start
 
-1. **Install dependencies:**
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Chrome or Chromium browser (Puppeteer will use this)
+- Anthropic API key ([Get one here](https://console.anthropic.com/))
+
+### Step-by-Step Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/linkedin-insights-agent.git
+   cd linkedin-insights-agent
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Add your Anthropic API key:**
+3. **Add your Anthropic API key:**
    ```bash
    cp .env.example .env
-   # then edit .env and paste your key for ANTHROPIC_API_KEY
+   ```
+   Then edit `.env` and add your Anthropic API key:
+   ```
+   ANTHROPIC_API_KEY=your-actual-api-key-here
    ```
 
-3. **Configure your target:**
+4. **Configure your target:**
    Edit `src/main.ts` to change the LinkedIn username and focus topics:
    ```typescript
    const config: ScrapingConfig = {
-     linkedinUsername: 'sammckenna1', // Change this
+     linkedinUsername: 'sammckenna1', // Change to your target username
      postLimit: 200,
-     focusTopics: ['sales', 'prospecting', 'outreach'], // Add your topics
-     outputFormat: 'instructions' // 'json', 'markdown', or 'instructions'
+     focusTopics: ['sales', 'prospecting', 'outreach'], // Customize topics
+     outputFormat: 'instructions' // Choose: 'json', 'markdown', or 'instructions'
    };
    ```
 
-4. **Run the analysis:**
+5. **Run the analysis:**
    ```bash
    npm start
    ```
 
-5. **Find your results:**
-   Results are saved in the `./data/` directory with format: `username-insights-YYYY-MM-DD.txt`
+6. **LinkedIn Login (if prompted):**
+   - The browser will open automatically (non-headless mode)
+   - If the profile is private or LinkedIn requires login, you'll see the login page
+   - **Log in manually** in the opened browser window using your LinkedIn credentials
+   - After logging in, the scraper will continue automatically
+   - Your credentials are **never stored** - you're just logging into LinkedIn normally
+   - The browser stays open so you can see the scraping progress
+
+7. **Find your results:**
+   Results are saved in the `./data/[username]/` directory with three files:
+   - `1-knowledge-base.txt` - Comprehensive reference material
+   - `2-core-rules.txt` - Key principles to always apply
+   - `3-project-instructions.txt` - Concise AI project guidance
 
 ## Configuration Options
 
@@ -126,9 +154,10 @@ outputFormat: 'instructions'
 - Use responsibly and in compliance with LinkedIn's Terms of Service
 
 ### Browser Requirements
-- Runs in non-headless mode by default for transparency
-- Requires Chrome/Chromium to be installed
-- May require manual login for private profiles
+- Runs in non-headless mode by default so you can see what's happening
+- Requires Chrome/Chromium to be installed (Puppeteer will download it automatically)
+- LinkedIn login may be required for private profiles or rate limiting
+- Browser window stays open during scraping for transparency and debugging
 
 ### Data Privacy
 - No login credentials are stored
