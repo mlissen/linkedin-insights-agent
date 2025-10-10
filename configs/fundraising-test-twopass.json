@@ -1,0 +1,42 @@
+{
+  "topic": "Fundraising & Investment - Two-Pass Test",
+  "experts": [
+    {
+      "username": "harrystebbings",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "chamath",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "justinrinfretmoore",
+      "weight": 1.0,
+      "postLimit": 100
+    }
+  ],
+  "focusTopics": [
+    "fundraising",
+    "venture capital",
+    "investment",
+    "startup funding",
+    "pitch deck",
+    "investors",
+    "funding rounds",
+    "capital raising",
+    "due diligence",
+    "term sheets",
+    "valuation",
+    "seed round",
+    "series A",
+    "angel investors",
+    "VC pitch",
+    "founder advice"
+  ],
+  "outputMode": "both",
+  "postLimit": 100,
+  "parallel": false,
+  "tokenLimit": 50000
+}

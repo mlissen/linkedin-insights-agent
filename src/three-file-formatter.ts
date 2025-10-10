@@ -870,33 +870,23 @@ export class ThreeFileFormatter {
   async saveThreeFiles(
     output: ThreeFileOutput,
     profileUsername: string,
-    outputDir: string = './data'
+    outputDir: string = './data',
+    runTimestamp?: string
   ): Promise<{ folderPath: string; files: string[] }> {
-    // Create timestamp
-    const now = new Date();
-    const dateStr = now.toLocaleDateString('en-US', {
-      month: '2-digit',
-      day: '2-digit',
-      year: 'numeric'
-    }).replace(/\//g, '');
-    const timeStr = now.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
-    }).replace(/\s/g, '').toLowerCase();
+    // Create subdirectories for knowledge, rules, and instructions
+    const knowledgeDir = path.join(outputDir, 'knowledge');
+    const rulesDir = path.join(outputDir, 'rules');
+    const instructionsDir = path.join(outputDir, 'instructions');
 
-    // Create folder name
-    const folderName = `${profileUsername}-${dateStr}-${timeStr}`;
-    const folderPath = path.join(outputDir, folderName);
+    await fs.mkdir(knowledgeDir, { recursive: true });
+    await fs.mkdir(rulesDir, { recursive: true });
+    await fs.mkdir(instructionsDir, { recursive: true });
 
-    // Create directory
-    await fs.mkdir(folderPath, { recursive: true });
-
-    // Define file paths
+    // Define file paths with expert username prefix
     const files = {
-      knowledgeBase: path.join(folderPath, '1-knowledge-base.txt'),
-      coreRules: path.join(folderPath, '2-core-rules.txt'),
-      projectInstructions: path.join(folderPath, '3-project-instructions.txt')
+      knowledgeBase: path.join(knowledgeDir, `${profileUsername}-1-knowledge-base.txt`),
+      coreRules: path.join(rulesDir, `${profileUsername}-2-core-rules.txt`),
+      projectInstructions: path.join(instructionsDir, `${profileUsername}-3-project-instructions.txt`)
     };
 
     // Write files
@@ -906,13 +896,13 @@ export class ThreeFileFormatter {
       fs.writeFile(files.projectInstructions, output.projectInstructions, 'utf-8')
     ]);
 
-    console.log(`📁 Created output folder: ${folderPath}`);
-    console.log(`   📄 1-knowledge-base.txt (${Math.round(output.knowledgeBase.length / 1024)}KB)`);
-    console.log(`   📄 2-core-rules.txt (${Math.round(output.coreRules.length / 1024)}KB)`);
-    console.log(`   📄 3-project-instructions.txt (${Math.round(output.projectInstructions.length / 1024)}KB)`);
+    console.log(`📁 Saved files for ${profileUsername}:`);
+    console.log(`   📄 knowledge/${profileUsername}-1-knowledge-base.txt (${Math.round(output.knowledgeBase.length / 1024)}KB)`);
+    console.log(`   📄 rules/${profileUsername}-2-core-rules.txt (${Math.round(output.coreRules.length / 1024)}KB)`);
+    console.log(`   📄 instructions/${profileUsername}-3-project-instructions.txt (${Math.round(output.projectInstructions.length / 1024)}KB)`);
 
     return {
-      folderPath,
+      folderPath: outputDir,
       files: [files.knowledgeBase, files.coreRules, files.projectInstructions]
     };
   }

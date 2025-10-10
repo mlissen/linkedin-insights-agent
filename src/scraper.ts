@@ -384,7 +384,14 @@ export class LinkedInScraper {
                 const imageUrls: string[] = [];
                 for (const img of imageEls) {
                   const src = img.getAttribute('src') || img.getAttribute('data-delayed-url') || '';
-                  if (src && !src.includes('data:image') && !src.includes('profile-photo') && !src.includes('ghost-person')) {
+                  // Filter out UI icons, profile photos, and small images
+                  if (src &&
+                      !src.includes('data:image') &&
+                      !src.includes('profile-photo') &&
+                      !src.includes('profile-displayphoto') &&
+                      !src.includes('ghost-person') &&
+                      !src.includes('static.licdn.com/aero-v1/sc/h/') &&
+                      !src.includes('static.licdn.com/sc/h/')) {
                     imageUrls.push(src);
                   }
                 }
@@ -553,7 +560,14 @@ export class LinkedInScraper {
             const imageUrls: string[] = [];
             $post.find('img').each((_, img) => {
               const src = $(img).attr('src') || $(img).attr('data-delayed-url') || '';
-              if (src && !src.includes('data:image') && !src.includes('profile-photo') && !src.includes('ghost-person')) {
+              // Filter out UI icons, profile photos, and small images
+              if (src &&
+                  !src.includes('data:image') &&
+                  !src.includes('profile-photo') &&
+                  !src.includes('profile-displayphoto') &&
+                  !src.includes('ghost-person') &&
+                  !src.includes('static.licdn.com/aero-v1/sc/h/') &&
+                  !src.includes('static.licdn.com/sc/h/')) {
                 imageUrls.push(src);
               }
             });

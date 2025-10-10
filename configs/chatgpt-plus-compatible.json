@@ -1,0 +1,29 @@
+{
+  "topic": "Marketing & Growth",
+  "experts": [
+    {
+      "username": "expert1",
+      "weight": 1.0,
+      "postLimit": 150
+    },
+    {
+      "username": "expert2",
+      "weight": 1.0,
+      "postLimit": 150
+    }
+  ],
+  "focusTopics": [
+    "marketing",
+    "growth",
+    "content strategy",
+    "SEO",
+    "social media",
+    "brand building",
+    "customer acquisition"
+  ],
+  "outputMode": "both",
+  "postLimit": 150,
+  "parallel": true,
+  "tokenLimit": 32000,
+  "description": "Optimized for ChatGPT Plus (32K token limit)"
+}

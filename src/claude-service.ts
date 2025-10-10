@@ -23,6 +23,50 @@ export class ClaudeService {
     });
   }
 
+  async scorePostRelevance(post: LinkedInPost, focusTopics?: string[]): Promise<number> {
+    const topicsContext = focusTopics && focusTopics.length > 0
+      ? focusTopics.join(', ')
+      : 'fundraising, venture capital, investment, startup funding';
+
+    const prompt = `You are evaluating whether a LinkedIn post is relevant to the following topics: ${topicsContext}
+
+POST CONTENT:
+"${post.content.substring(0, 1000)}"
+
+POST TYPE: ${post.contentType || 'post'}
+
+Task: Score how relevant this post is to the focus topics on a scale of 0.0 to 1.0, where:
+- 1.0 = Highly relevant (directly discusses ${topicsContext})
+- 0.5 = Somewhat relevant (mentions topics tangentially)
+- 0.0 = Not relevant (completely off-topic: recruiting, product marketing, events, personal updates, etc.)
+
+Respond ONLY with valid JSON in this exact format:
+{"relevance": 0.8}`;
+
+    try {
+      const response = await this.anthropic.messages.create({
+        model: "claude-3-haiku-20240307",
+        max_tokens: 100,
+        messages: [{
+          role: "user",
+          content: prompt
+        }]
+      });
+
+      const content = response.content[0];
+      if (content.type === 'text') {
+        const parsed = this.parseJsonResponse<{ relevance: number }>(content.text);
+        if (parsed && typeof parsed.relevance === 'number') {
+          return Math.max(0, Math.min(1, parsed.relevance)); // Clamp to 0-1
+        }
+      }
+      return 0; // Default to not relevant if parsing fails
+    } catch (error: any) {
+      console.error('Error scoring post relevance:', error.message);
+      return 0.5; // Default to neutral if error
+    }
+  }
+
   async analyzePost(post: LinkedInPost, focusTopics?: string[]): Promise<{
     insights: SalesInsight[];
     templates: string[];
@@ -31,9 +75,11 @@ export class ClaudeService {
   }> {
     const prompt = this.buildAnalysisPrompt(post, focusTopics);
 
+    // Declare imageContent outside try block so it's accessible in catch
+    let imageContent: Anthropic.ImageBlockParam[] = [];
+
     try {
       // Check if post has images and download them if present
-      const imageContent: Anthropic.ImageBlockParam[] = [];
       if (post.imageUrls && post.imageUrls.length > 0) {
         console.log(`🖼️  Post ${post.id} has ${post.imageUrls.length} images, downloading for analysis...`);
         for (const imageUrl of post.imageUrls.slice(0, 5)) { // Limit to 5 images per post
@@ -62,7 +108,7 @@ export class ClaudeService {
       ];
 
       const response = await this.anthropic.messages.create({
-        model: "claude-3-haiku-20240307",
+        model: "claude-sonnet-4-5",
         max_tokens: 2000,
         messages: [{
           role: "user",
@@ -78,6 +124,29 @@ export class ClaudeService {
       }
     } catch (error: any) {
       console.error('Error analyzing post with Claude:', error);
+
+      // If we had images and the error was image-related, retry without images
+      if (imageContent.length > 0 && error.message && error.message.includes('image')) {
+        console.log(`🔄 Retrying post ${post.id} without images...`);
+        try {
+          const response = await this.anthropic.messages.create({
+            model: "claude-sonnet-4-5",
+            max_tokens: 2000,
+            messages: [{
+              role: "user",
+              content: [{ type: 'text', text: prompt }]
+            }]
+          });
+
+          const content = response.content[0];
+          if (content.type === 'text') {
+            return this.parseAnalysisResponse(content.text, post);
+          }
+        } catch (retryError: any) {
+          console.error('Retry also failed:', retryError.message);
+        }
+      }
+
       return {
         insights: [],
         templates: [],
@@ -148,7 +217,18 @@ Important rules:
       ? `Focus on insights related to: ${focusTopics.join(', ')}.`
       : '';
 
-    return `Analyze this LinkedIn post for actionable insights, strategies, guidance, and tactics:
+    return `CRITICAL INSTRUCTION: Only extract insights if this post directly discusses fundraising, venture capital, investment, startup funding, or closely related topics. If this post is primarily about:
+- Recruiting or job postings
+- Product marketing or product launches
+- Events, webinars, or conferences
+- Personal updates, congratulations, or celebrations
+- Unrelated business topics (packaging, tires, manufacturing, etc.)
+
+Then return EMPTY ARRAYS for all categories. Do not try to force insights from irrelevant content.
+
+${topicsContext}
+
+Analyze this LinkedIn post for actionable insights, strategies, guidance, and tactics:
 
 POST CONTENT:
 "${post.content}"
@@ -170,7 +250,6 @@ ${hasImages ? `IMAGES: This post contains ${imageCount} image(s). IMPORTANT: Car
 - Any text, tables, charts, or data visualization containing actionable insights
 - Templates, examples, or specific methodologies displayed
 Treat insights from images with EQUAL WEIGHT to text content. Extract all frameworks and playbooks visible in the images.\n` : ''}
-${topicsContext}
 
 Please analyze this post and extract:
 
@@ -309,11 +388,49 @@ Only include actual insights from the post content. If no insights are found in 
     const allActionableItems: string[] = [];
     const allMethodologies: Array<{name: string, description: string, application?: string}> = [];
 
-    console.log(`🤖 Starting AI analysis of ${posts.length} posts in batches of ${batchSize}...`);
+    console.log(`🤖 Starting two-pass AI analysis of ${posts.length} posts...`);
+
+    // PASS 1: Score relevance with Haiku (fast & cheap)
+    console.log(`📊 Pass 1: Scoring post relevance with Haiku...`);
+    const relevanceScores: { post: LinkedInPost; score: number }[] = [];
 
     for (let i = 0; i < posts.length; i += batchSize) {
       const batch = posts.slice(i, i + batchSize);
-      console.log(`🔍 Analyzing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(posts.length/batchSize)} (posts ${i+1}-${Math.min(i+batchSize, posts.length)})`);
+      const scorePromises = batch.map(async post => ({
+        post,
+        score: await this.scorePostRelevance(post, focusTopics)
+      }));
+      const batchScores = await Promise.all(scorePromises);
+      relevanceScores.push(...batchScores);
+
+      if (i + batchSize < posts.length) {
+        // Longer wait to avoid rate limits (50 req/min = 1 req every 1.2s)
+        // With batchSize=5, wait 6+ seconds between batches
+        await new Promise(resolve => setTimeout(resolve, 7000));
+      }
+    }
+
+    // Filter posts by relevance threshold
+    const relevantPosts = relevanceScores.filter(({ score }) => score > 0.6).map(({ post }) => post);
+    const filteredCount = posts.length - relevantPosts.length;
+    console.log(`✅ Pass 1 complete: ${relevantPosts.length}/${posts.length} posts are relevant (filtered out ${filteredCount} off-topic posts)`);
+
+    if (relevantPosts.length === 0) {
+      console.log(`⚠️  No relevant posts found. Skipping Pass 2.`);
+      return {
+        insights: [],
+        templates: [],
+        actionableItems: [],
+        methodologies: []
+      };
+    }
+
+    // PASS 2: Extract insights with Sonnet (high quality, relevant posts only)
+    console.log(`🧠 Pass 2: Extracting insights from ${relevantPosts.length} relevant posts with Sonnet...`);
+
+    for (let i = 0; i < relevantPosts.length; i += batchSize) {
+      const batch = relevantPosts.slice(i, i + batchSize);
+      console.log(`🔍 Analyzing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(relevantPosts.length/batchSize)} (posts ${i+1}-${Math.min(i+batchSize, relevantPosts.length)})`);
 
       // Process batch in parallel
       const batchPromises = batch.map(post => this.analyzePost(post, focusTopics));
@@ -328,13 +445,13 @@ Only include actual insights from the post content. If no insights are found in 
       }
 
       // Rate limiting - wait between batches
-      if (i + batchSize < posts.length) {
+      if (i + batchSize < relevantPosts.length) {
         console.log('⏳ Waiting 2 seconds before next batch...');
         await new Promise(resolve => setTimeout(resolve, 2000));
       }
     }
 
-    console.log(`✅ AI analysis complete! Extracted ${allInsights.length} insights, ${allTemplates.length} templates, ${allActionableItems.length} actionable items`);
+    console.log(`✅ Pass 2 complete! Extracted ${allInsights.length} insights, ${allTemplates.length} templates, ${allActionableItems.length} actionable items`);
 
     return {
       insights: this.deduplicateInsights(allInsights),

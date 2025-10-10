@@ -1,0 +1,44 @@
+{
+  "topic": "Fundraising & Investment - Test Run",
+  "experts": [
+    {
+      "username": "toby-egbuna",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "harrystebbings",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "chamath",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "sarahguo",
+      "weight": 1.0,
+      "postLimit": 100
+    },
+    {
+      "username": "justinemoore",
+      "weight": 1.0,
+      "postLimit": 100
+    }
+  ],
+  "focusTopics": [
+    "fundraising",
+    "venture capital",
+    "investment",
+    "startup funding",
+    "pitch deck",
+    "investors",
+    "funding rounds",
+    "capital raising"
+  ],
+  "outputMode": "both",
+  "postLimit": 100,
+  "parallel": true,
+  "tokenLimit": 50000
+}

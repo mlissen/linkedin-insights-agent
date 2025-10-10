@@ -1,32 +1,127 @@
 import './env.js';
-import fs from 'fs/promises';
-import path from 'path';
+import { CLIParser } from './cli-parser.js';
+import { ConfigLoader } from './config-loader.js';
+import { MultiExpertOrchestrator } from './multi-expert-orchestrator.js';
 import { LinkedInScraper } from './scraper.js';
 import { InsightAnalyzer } from './analyzer.js';
-import { OutputFormatter } from './formatter.js';
-import { ClaudeProjectFormatter } from './claude-project-formatter.js';
 import { ThreeFileFormatter } from './three-file-formatter.js';
-import { LinkedInPost, ScrapingConfig, ExternalArticle } from './types.js';
+import { ScrapingConfig, MultiExpertConfig, LinkedInPost, ExternalArticle } from './types.js';
+import fs from 'fs/promises';
+import path from 'path';
 
+/**
+ * Main entry point - supports both single and multi-expert modes
+ */
 async function main() {
-  // Configuration for Toby Egbuna fundraising insights
+  // Parse CLI arguments
+  const args = CLIParser.parse();
+  const mode = CLIParser.getMode(args);
+
+  if (mode === 'help') {
+    CLIParser.printHelp();
+    return;
+  }
+
+  if (mode === 'multi-cli' || mode === 'multi-config') {
+    await runMultiExpertMode(args);
+  } else {
+    await runSingleExpertMode(args);
+  }
+}
+
+/**
+ * Run multi-expert mode
+ */
+async function runMultiExpertMode(args: any) {
+  let config: MultiExpertConfig;
+
+  try {
+    if (args.config) {
+      // Load from config file
+      console.log(`📁 Loading configuration from: ${args.config}`);
+      config = await ConfigLoader.loadFromFile(args.config);
+    } else {
+      // Create from CLI arguments
+      config = ConfigLoader.fromCLI(args);
+    }
+
+    console.log(`🚀 Multi-Expert Mode: ${config.topic}`);
+    console.log(`👥 Processing ${config.experts.length} experts`);
+    console.log(`🎯 Focus topics: ${config.focusTopics.join(', ')}`);
+    console.log(`📊 Output mode: ${config.outputMode}`);
+    console.log(`⚡ Parallel: ${config.parallel}`);
+    console.log('---');
+
+    const orchestrator = new MultiExpertOrchestrator();
+
+    try {
+      // Process all experts
+      const { expertAnalyses, aggregated, runFolder } = await orchestrator.processExperts(config);
+
+      // Save aggregated output if needed
+      if (aggregated && (config.outputMode === 'combined' || config.outputMode === 'both')) {
+        await orchestrator.saveAggregatedOutput(aggregated, config);
+      }
+
+      // Summary
+      console.log('---');
+      console.log('🎉 Multi-Expert Analysis Complete!');
+      console.log(`📁 All outputs saved to: ${runFolder}`);
+      console.log(`👥 Processed ${expertAnalyses.length} experts successfully`);
+
+      if (config.outputMode === 'individual' || config.outputMode === 'both') {
+        console.log(`📁 Individual outputs in: ${path.join(runFolder, 'individual')}/`);
+        for (const ea of expertAnalyses) {
+          if (ea.outputPath) {
+            console.log(`   - ${ea.expert.username}`);
+          }
+        }
+      }
+
+      if (config.outputMode === 'combined' || config.outputMode === 'both') {
+        console.log(`📁 Combined outputs in: ${path.join(runFolder, 'combined')}/`);
+      }
+
+      console.log('');
+      console.log(`📊 Total insights: ${expertAnalyses.reduce((sum, ea) => sum + ea.analysis.insights.length, 0)}`);
+      console.log(`📝 Total templates: ${expertAnalyses.reduce((sum, ea) => sum + ea.analysis.templates.length, 0)}`);
+      console.log(`📰 Total posts analyzed: ${expertAnalyses.reduce((sum, ea) => sum + ea.analysis.posts.length, 0)}`);
+
+    } finally {
+      await orchestrator.close();
+    }
+
+  } catch (error: any) {
+    console.error('❌ Error in multi-expert mode:', error.message);
+    if (error.stack) {
+      console.error(error.stack);
+    }
+    process.exit(1);
+  }
+}
+
+/**
+ * Run single expert mode (legacy)
+ */
+async function runSingleExpertMode(args: any) {
+  // Use hardcoded config or CLI args for single expert
   const config: ScrapingConfig = {
-    linkedinUsername: 'toby-egbuna', // Toby Egbuna's LinkedIn username
-    postLimit: 200,
-    focusTopics: ['fundraising', 'venture capital', 'investment', 'startup funding', 'pitch deck', 'investors', 'funding rounds', 'capital raising', 'due diligence'], // Fundraising focus topics
-    outputFormat: 'instructions' // Choose: 'json', 'markdown', or 'instructions'
+    linkedinUsername: args.expert || 'toby-egbuna',
+    postLimit: args.postLimit || 200,
+    focusTopics: args.focusTopics
+      ? args.focusTopics.split(',').map((t: string) => t.trim())
+      : ['fundraising', 'venture capital', 'investment', 'startup funding', 'pitch deck', 'investors', 'funding rounds', 'capital raising', 'due diligence'],
+    outputFormat: 'instructions'
   };
 
-  console.log(`🚀 Starting LinkedIn insights extraction for @${config.linkedinUsername}`);
+  console.log(`🚀 Single Expert Mode: @${config.linkedinUsername}`);
   console.log(`📊 Target: ${config.postLimit} posts`);
   console.log(`🎯 Focus topics: ${config.focusTopics.join(', ')}`);
   console.log(`📄 Output format: ${config.outputFormat}`);
   console.log('---');
 
   const scraper = new LinkedInScraper();
-  const formatter = new OutputFormatter();
-  const claudeFormatter = new ClaudeProjectFormatter();
-  const threeFileFormatter = new ThreeFileFormatter();
+  const formatter = new ThreeFileFormatter();
 
   const cacheDir = path.resolve('./.cache');
   const postsCachePath = path.join(cacheDir, `${config.linkedinUsername}-posts.json`);
@@ -95,17 +190,17 @@ async function main() {
 
     const analyzer = new InsightAnalyzer({ linkedInArticles });
 
-    // Step 3: Analyze insights
+    // Analyze insights
     console.log('🧠 Analyzing insights...');
     const analysis = await analyzer.analyzeInsights(posts, config);
     console.log(`✅ Extracted ${analysis.insights.length} insights`);
 
-    // Step 4: Format and save output in THREE FILES
+    // Format and save output in THREE FILES
     console.log('📝 Generating three-file output...');
-    const threeFileOutput = await threeFileFormatter.formatThreeFiles(analysis, config);
+    const threeFileOutput = await formatter.formatThreeFiles(analysis, config);
 
     // Save to organized folder structure
-    const { folderPath, files } = await threeFileFormatter.saveThreeFiles(
+    const { folderPath, files } = await formatter.saveThreeFiles(
       threeFileOutput,
       config.linkedinUsername
     );

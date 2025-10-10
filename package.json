@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "timeout 600 tsx src/main.ts",
+    "start": "tsx src/main.ts",
+    "start:short": "timeout 600 tsx src/main.ts",
     "start:long": "timeout 1200 tsx src/main.ts",
     "dev": "tsx watch src/main.ts",
     "build": "tsc",

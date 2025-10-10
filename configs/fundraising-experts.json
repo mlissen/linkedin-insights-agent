@@ -1,0 +1,32 @@
+{
+  "topic": "Fundraising & Investment",
+  "experts": [
+    {
+      "username": "toby-egbuna",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "jason",
+      "weight": 0.9,
+      "postLimit": 150
+    }
+  ],
+  "focusTopics": [
+    "fundraising",
+    "venture capital",
+    "investment",
+    "startup funding",
+    "pitch deck",
+    "investors",
+    "funding rounds",
+    "capital raising",
+    "due diligence",
+    "term sheets",
+    "valuation"
+  ],
+  "outputMode": "both",
+  "postLimit": 200,
+  "parallel": true,
+  "tokenLimit": 50000
+}

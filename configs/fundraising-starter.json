@@ -1,0 +1,28 @@
+{
+  "topic": "Fundraising & Investment - Starter Pack",
+  "experts": [
+    {
+      "username": "toby-egbuna",
+      "weight": 1.0,
+      "postLimit": 200,
+      "note": "Toby Egbuna - Co-founder of Chezie, Forbes 30u30"
+    }
+  ],
+  "focusTopics": [
+    "fundraising",
+    "venture capital",
+    "investment",
+    "startup funding",
+    "pitch deck",
+    "investors",
+    "funding rounds",
+    "capital raising",
+    "due diligence",
+    "term sheets",
+    "valuation"
+  ],
+  "outputMode": "both",
+  "postLimit": 200,
+  "parallel": true,
+  "tokenLimit": 50000
+}

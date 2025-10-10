@@ -31,12 +31,12 @@ export class InsightAnalyzer {
   private async analyzeWithAI(posts: LinkedInPost[], config: ScrapingConfig): Promise<InsightAnalysis> {
     console.log('🤖 Using AI-powered analysis with Claude...');
 
-    // Filter posts by focus topics if specified
-    const relevantPosts = this.filterPostsByTopics(posts, config.focusTopics);
-    console.log(`📊 Analyzing ${relevantPosts.length}/${posts.length} posts relevant to focus topics`);
+    // Don't pre-filter posts - let Claude identify relevant content
+    // This avoids excluding posts that discuss the topic without using exact keywords
+    console.log(`📊 Analyzing all ${posts.length} posts (Claude will filter for relevance)`);
 
     // Use Claude to analyze posts
-    const aiResults = await this.claudeService!.batchAnalyzePosts(relevantPosts, 5, config.focusTopics);
+    const aiResults = await this.claudeService!.batchAnalyzePosts(posts, 5, config.focusTopics);
 
     const enrichment = await this.enrichExternalContent(posts, config);
     const summary = this.generateSummary(aiResults.insights, posts.length);

@@ -1,0 +1,112 @@
+{
+  "topic": "Fundraising & Investment - Comprehensive",
+  "experts": [
+    {
+      "username": "harrystebbings",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "daltoncaldwell",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "robertfredericksmith",
+      "weight": 0.9,
+      "postLimit": 150
+    },
+    {
+      "username": "chamath",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "sarahxguo",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "justinrinfretmoore",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "bfeld",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "pierreedouardsterin",
+      "weight": 0.8,
+      "postLimit": 150
+    },
+    {
+      "username": "hemanttaneja",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "peterjameswalker",
+      "weight": 0.9,
+      "postLimit": 150
+    },
+    {
+      "username": "amandagatessmith",
+      "weight": 0.8,
+      "postLimit": 150
+    },
+    {
+      "username": "charlotte-ketelaar",
+      "weight": 0.9,
+      "postLimit": 150
+    },
+    {
+      "username": "toby-egbuna",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "katie--dunn",
+      "weight": 0.8,
+      "postLimit": 150
+    },
+    {
+      "username": "sade-dozan-cfre-9a496665",
+      "weight": 0.7,
+      "postLimit": 100
+    },
+    {
+      "username": "druckerdan",
+      "weight": 0.7,
+      "postLimit": 100
+    },
+    {
+      "username": "shannoncherry",
+      "weight": 0.7,
+      "postLimit": 100
+    }
+  ],
+  "focusTopics": [
+    "fundraising",
+    "venture capital",
+    "investment",
+    "startup funding",
+    "pitch deck",
+    "investors",
+    "funding rounds",
+    "capital raising",
+    "due diligence",
+    "term sheets",
+    "valuation",
+    "seed round",
+    "series A",
+    "angel investors",
+    "VC pitch",
+    "founder advice"
+  ],
+  "outputMode": "both",
+  "postLimit": 150,
+  "parallel": true,
+  "tokenLimit": 50000
+}

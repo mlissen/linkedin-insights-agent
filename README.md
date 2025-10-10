@@ -1,16 +1,25 @@
 # LinkedIn Insights Agent
 
-A powerful tool to scrape LinkedIn posts from sales experts and extract actionable insights, strategies, templates, and tactics for your AI sales and marketing projects.
+A powerful tool to scrape LinkedIn posts from experts and extract actionable insights, strategies, templates, and tactics for your AI sales, marketing, and business projects.
 
 ## Features
 
+### Core Features
 - 🔍 **Smart Scraping**: Extracts up to 200 recent posts from any LinkedIn user
 - 🧠 **AI-Powered Analysis**: Categorizes insights into prospecting, discovery, closing, templates, and more
 - 📊 **Multiple Output Formats**: JSON, Markdown, or formatted project instructions
-- 🎯 **Topic Filtering**: Focus on specific sales topics like "cold email" or "objection handling"
+- 🎯 **Topic Filtering**: Focus on specific topics like "cold email", "fundraising", or "objection handling"
 - 📝 **Template Extraction**: Automatically identifies and extracts email templates, scripts, and frameworks
-- 🌐 **Extended Content Sources**: Captures LinkedIn articles and trusted off-platform resources (blogs, guides) referenced by the expert
+- 🌐 **Extended Content Sources**: Captures LinkedIn articles and trusted off-platform resources
 - 🚀 **Project-Ready Output**: Generates instructions you can directly input into AI projects
+
+### 🆕 Multi-Expert Features
+- 👥 **Multi-Expert Extraction**: Extract insights from multiple LinkedIn experts simultaneously
+- ⚡ **Parallel Processing**: Process multiple experts concurrently for faster results
+- 🔄 **Intelligent Aggregation**: Combine and deduplicate insights across experts
+- 📁 **Dual Output Modes**: Generate individual files per expert AND/OR combined aggregated outputs
+- 🎯 **Token-Aware Generation**: Auto-split files to fit LLM context windows (Claude, ChatGPT, etc.)
+- 📋 **Config File Support**: Define multi-expert setups in JSON files for easy reuse
 
 ## Quick Start
 
@@ -127,22 +136,119 @@ focusTopics: [
 
 ## Example Use Cases
 
-### For Sales AI Projects
+### Single Expert Mode (Legacy)
+
+#### For Sales AI Projects
 ```bash
-# Extract Sam McKenna's prospecting strategies
-# Use output as instructions for AI cold email generator
-linkedinUsername: 'sammckenna1'
-focusTopics: ['prospecting', 'cold email', 'outreach']
-outputFormat: 'instructions'
+npm start -- --expert sammckenna1 --focus-topics "prospecting,cold email,outreach"
 ```
 
-### For Marketing AI Projects
+#### For Marketing AI Projects
 ```bash
-# Extract social selling tactics from Morgan J Ingram
-# Use for LinkedIn automation tools
-linkedinUsername: 'morganjingram'
-focusTopics: ['social selling', 'linkedin', 'video prospecting']
-outputFormat: 'instructions'
+npm start -- --expert morganjingram --focus-topics "social selling,linkedin,video prospecting"
+```
+
+### 🆕 Multi-Expert Mode
+
+#### Extract from Multiple Fundraising Experts
+```bash
+npm start -- --config ./configs/fundraising-experts.json
+```
+
+#### Quick Multi-Expert Setup (CLI)
+```bash
+npm start -- --experts sammckenna1,jebblount,morganjingram \
+             --topic "Sales Mastery" \
+             --focus-topics "prospecting,cold email,closing" \
+             --output-mode both
+```
+
+#### ChatGPT Plus Compatible (32K token limit)
+```bash
+npm start -- --config ./configs/chatgpt-plus-compatible.json
+```
+
+## Multi-Expert Configuration
+
+### Configuration File Format
+
+Create a JSON file in `./configs/` directory:
+
+```json
+{
+  "topic": "Fundraising & Investment",
+  "experts": [
+    {
+      "username": "toby-egbuna",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "expert2",
+      "weight": 0.9,
+      "postLimit": 150
+    }
+  ],
+  "focusTopics": ["fundraising", "pitch deck", "VC", "investors"],
+  "outputMode": "both",
+  "parallel": true,
+  "tokenLimit": 50000
+}
+```
+
+### Output Modes
+
+- **`individual`**: Separate files for each expert
+- **`combined`**: Single aggregated file with all insights
+- **`both`**: Generate both individual and combined outputs (recommended)
+
+### Token Limits by Platform
+
+| Platform | Token Limit | Recommended Setting |
+|----------|-------------|---------------------|
+| Claude Standard | 200K | `50000` |
+| Claude Enterprise | 500K | `50000` |
+| ChatGPT Free | 8K | `7000` |
+| ChatGPT Plus | 32K | `32000` |
+| ChatGPT Pro | 128K | `50000` |
+
+### CLI Arguments
+
+```bash
+# Multi-expert from config file
+npm start -- --config ./configs/your-config.json
+
+# Multi-expert from CLI
+npm start -- --experts user1,user2,user3 \
+             --topic "Your Topic" \
+             --focus-topics "topic1,topic2,topic3" \
+             --output-mode both \
+             --token-limit 32000
+
+# Single expert (legacy)
+npm start -- --expert username
+```
+
+### Output Structure
+
+#### Individual Mode
+```
+data/individual/
+  ├── expert1-[timestamp]/
+  │   ├── 1-knowledge-base.txt
+  │   ├── 2-core-rules.txt
+  │   └── 3-project-instructions.txt
+  └── expert2-[timestamp]/
+      └── ...
+```
+
+#### Combined Mode
+```
+data/combined/
+  └── topic-[timestamp]/
+      ├── 1-aggregated-knowledge.txt
+      ├── 2-unified-rules.txt
+      └── 3-master-instructions.txt
 ```
 
 ## Important Notes

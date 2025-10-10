@@ -1,0 +1,36 @@
+{
+  "topic": "Sales & Outreach",
+  "experts": [
+    {
+      "username": "sammckenna1",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "jebblount",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "morganjingram",
+      "weight": 0.9,
+      "postLimit": 150
+    }
+  ],
+  "focusTopics": [
+    "sales",
+    "prospecting",
+    "cold email",
+    "outreach",
+    "discovery calls",
+    "objection handling",
+    "closing techniques",
+    "sales cadences",
+    "B2B sales",
+    "social selling"
+  ],
+  "outputMode": "both",
+  "postLimit": 200,
+  "parallel": true,
+  "tokenLimit": 50000
+}
