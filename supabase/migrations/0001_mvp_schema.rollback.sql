@@ -1,0 +1,11 @@
+BEGIN;
+DROP FUNCTION IF EXISTS public.increment_run_usage(uuid, date);
+DROP TABLE IF EXISTS public.run_artifacts CASCADE;
+DROP TABLE IF EXISTS public.run_events CASCADE;
+DROP TABLE IF EXISTS public.runs CASCADE;
+DROP TYPE IF EXISTS public.run_status;
+DROP TABLE IF EXISTS public.linked_sessions CASCADE;
+DROP TABLE IF EXISTS public.usage_counters CASCADE;
+DROP TABLE IF EXISTS public.users CASCADE;
+DROP FUNCTION IF EXISTS public.set_updated_at();
+COMMIT;
