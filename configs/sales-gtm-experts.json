@@ -1,0 +1,61 @@
+{
+  "topic": "Sales, GTM Strategy & Growth",
+  "experts": [
+    {
+      "username": "johnbarrows",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "charleneli",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "jamesclear",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "majavoje",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "jasperruijs",
+      "weight": 1.0,
+      "postLimit": 200
+    },
+    {
+      "username": "ivangrinevich",
+      "weight": 1.0,
+      "postLimit": 200
+    }
+  ],
+  "focusTopics": [
+    "sales",
+    "B2B sales",
+    "sales training",
+    "GTM strategy",
+    "go-to-market",
+    "digital transformation",
+    "AI in sales",
+    "relationship building",
+    "habit formation",
+    "behavioral strategies",
+    "sales automation",
+    "outreach",
+    "prospecting",
+    "marketing automation",
+    "positioning",
+    "messaging",
+    "copywriting",
+    "landing pages",
+    "business growth",
+    "disruptive mindset"
+  ],
+  "outputMode": "both",
+  "postLimit": 200,
+  "parallel": true,
+  "tokenLimit": 50000
+}

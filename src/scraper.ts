@@ -65,13 +65,28 @@ export class LinkedInScraper {
     console.log('✅ Browser launched! If you\'re not logged into LinkedIn, please log in manually.');
   }
 
-  async scrapeUserPosts(config: ScrapingConfig): Promise<LinkedInPost[]> {
+  async scrapeUserPosts(config: ScrapingConfig, cachePath?: string): Promise<LinkedInPost[]> {
     if (!this.page) {
       throw new Error('Scraper not initialized. Call init() first.');
     }
 
     const posts: LinkedInPost[] = [];
     const profileUrl = `https://www.linkedin.com/in/${config.linkedinUsername}/recent-activity/all/`;
+
+    // Helper function to save posts incrementally
+    const saveIncremental = async () => {
+      if (cachePath && posts.length > 0) {
+        try {
+          const fs = await import('fs/promises');
+          const path = await import('path');
+          await fs.mkdir(path.dirname(cachePath), { recursive: true });
+          await fs.writeFile(cachePath, JSON.stringify(posts, null, 2), 'utf-8');
+          console.log(`💾 Saved ${posts.length} posts to cache`);
+        } catch (error: any) {
+          console.log(`⚠️  Failed to save incremental cache: ${error.message}`);
+        }
+      }
+    };
 
     try {
       // First, let's navigate to LinkedIn homepage to verify login
@@ -634,12 +649,20 @@ export class LinkedInScraper {
             posts.push(post);
             postsScraped++;
             console.log(`✅ Scraped post ${postsScraped}/${config.postLimit}: "${post.content.substring(0, 50)}..." (${post.engagement.likes} likes, ${post.engagement.comments} comments)`);
+
+            // Save incrementally every 20 posts
+            if (postsScraped % 20 === 0) {
+              await saveIncremental();
+            }
           } else {
             console.log(`🔄 Skipping duplicate post: ${extractedPost.id}`);
           }
         }
 
-        if (postsScraped >= config.postLimit) break;
+        if (postsScraped >= config.postLimit) {
+          await saveIncremental(); // Final save before breaking
+          break;
+        }
 
         // Gentle scrolling to avoid triggering LinkedIn's anti-bot measures
         console.log(`Scroll attempt ${scrollAttempts + 1}/${maxScrollAttempts}`);

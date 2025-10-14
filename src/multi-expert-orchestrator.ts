@@ -151,7 +151,7 @@ export class MultiExpertOrchestrator {
       }
 
       console.log(`📥 Scraping posts from ${expert.username}...`);
-      posts = await this.scraper!.scrapeUserPosts(scrapingConfig);
+      posts = await this.scraper!.scrapeUserPosts(scrapingConfig, postsCachePath);
       console.log(`✅ Scraped ${posts.length} posts`);
 
       console.log(`📰 Collecting LinkedIn articles for ${expert.username}...`);

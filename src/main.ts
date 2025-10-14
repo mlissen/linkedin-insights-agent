@@ -174,7 +174,7 @@ async function runSingleExpertMode(args: any) {
       scraperInitialized = true;
 
       console.log('📥 Scraping LinkedIn posts...');
-      posts = await scraper.scrapeUserPosts(config);
+      posts = await scraper.scrapeUserPosts(config, postsCachePath);
       console.log(`✅ Scraped ${posts.length} posts`);
 
       console.log('📰 Collecting full LinkedIn articles...');
