@@ -45,7 +45,7 @@ export class RemoteScraper {
             await this.page.setCookie(...params);
         }
     }
-    async scrapeProfiles(profileUrls, postLimit, focusTopics) {
+    async scrapeProfiles(profileUrls, postLimit, focusTopics, cacheCallback) {
         if (!this.page)
             throw new Error('Remote scraper not initialized');
         const allPosts = [];
@@ -57,6 +57,16 @@ export class RemoteScraper {
             const posts = await this.scrapeProfile(username, postLimit);
             byExpert[username] = posts;
             allPosts.push(...posts);
+            // Save cache after each expert completes
+            if (cacheCallback && posts.length > 0) {
+                try {
+                    await cacheCallback(username, posts);
+                }
+                catch (error) {
+                    // Don't fail scraping if cache save fails
+                    console.warn(`Cache save failed for ${username}:`, error.message);
+                }
+            }
         }
         return { allPosts, byExpert };
     }

@@ -3,7 +3,7 @@ import { config } from './config.js';
 import { logger } from './logger.js';
 import { getSupabase } from './supabase.js';
 import { ensureLoginSession, captureCookiesFromSession, encryptCookies, decryptCookies, } from './browser-login.js';
-import { storeArtifact } from './storage.js';
+import { storeArtifact, saveScrapeCache } from './storage.js';
 import { RemoteScraper } from './remote-scraper.js';
 import { buildKnowledgeBundle, } from './knowledge-bundler.js';
 async function loadInsightAnalyzerCtor() {
@@ -165,7 +165,19 @@ export async function processRunJob(data, job) {
     try {
         await scraper.init();
         await updateRunStatus(run.id, 'running');
-        const scrapeResult = await scraper.scrapeProfiles(run.config.profileUrls, run.config.postLimit, run.config.topics);
+        const scrapeResult = await scraper.scrapeProfiles(run.config.profileUrls, run.config.postLimit, run.config.topics, async (username, posts) => {
+            // Save cache and log progress
+            await saveScrapeCache(run.id, username, posts);
+            await getSupabase().from('run_events').insert({
+                run_id: run.id,
+                event_type: 'scrape_progress',
+                payload: {
+                    username,
+                    postCount: posts.length,
+                    timestamp: new Date().toISOString(),
+                },
+            });
+        });
         const AnalyzerCtor = await loadInsightAnalyzerCtor();
         const analyzer = new AnalyzerCtor();
         const aggregateAnalysis = await analyzer.analyzeInsights(scrapeResult.allPosts, {
